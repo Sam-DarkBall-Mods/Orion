@@ -6,7 +6,8 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"A3_Data_F_AoW_Loadorder",
-			"A3_Drones_F"
+			"A3_Drones_F",
+			"cba_common"
 		};
 		requiredVersion = 2.22;
 		units[]=
