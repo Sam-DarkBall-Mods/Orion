@@ -333,7 +333,7 @@ class CfgVehicles
 			minAngleY = -150;
 			maxAngleY = 150;
 		};
-		class Viewoptics: ViewOptics
+		class ViewOptics: ViewOptics
 		{
 			initAngleX = 0;
 			minAngleX = 0;
@@ -765,21 +765,21 @@ class CfgVehicles
 		{
 			class Russian_DCamo {
 				displayName = "Russian Camo VKS";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\textures\orion_CO.paa"};
 				factions[] = {"OPF_F"};
 			};
 			
 			class Russian_Camo {
 				displayName = "Russian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\eorion_CO.paa"};
 				factions[] = {"OPF_F"};
 			};
 			
 				class Syrian_camo {
 				displayName = "Syrian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\syrianorion_CO.paa"};
 				factions[] = {"OPF_F"};
 			};
@@ -885,24 +885,24 @@ class CfgVehicles
 	
 	class orion_F_BLU : orion_F_OPF {
 		side = 1;
-		faction = BLU_F;
+		faction = "BLU_F";
 		displayName = "Orion-E";
 		author = "B01/Sam";
-		crew = B_UAV_AI;
+		crew = "B_UAV_AI";
 		hiddenSelections[] = {"Camo_1"};
 		hiddenSelectionsTextures[] = {"\orion\camo\Eorion_CO.paa"};
 		class TextureSources 
 		{
 			class Russian_Camo {
 				displayName = "Russian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\Eorion_CO.paa"};
 				factions[] = {"BLU_F"};
 			};
 			
 			class Syrian_camo {
 				displayName = "Syrian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\syrianorion_CO.paa"};
 				factions[] = {"BLU_F"};
 			};
@@ -1002,24 +1002,24 @@ class CfgVehicles
 	
 	class orion_F_IND : orion_F_OPF {
 		side = 2;
-		faction = IND_F;
+		faction = "IND_F";
 		displayName = "Orion-E";
 		author = "B01/Sam";
-		crew = I_UAV_AI;
+		crew = "I_UAV_AI";
 		hiddenSelections[] = {"Camo_1"};
 		hiddenSelectionsTextures[] = {"\orion\camo\Eorion_CO.paa"};
 		class TextureSources 
 		{
 			class Russian_Camo {
 				displayName = "Russian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\eorion_CO.paa"};
 				factions[] = {"IND_F"};
 			};
 			
 			class Syrian_camo {
 				displayName = "Syrian Camo";
-				author = SAM;
+				author = "SAM";
 				textures[] = {"orion\camo\syrianorion_CO.paa"};
 				factions[] = {"IND_F"};
 			};

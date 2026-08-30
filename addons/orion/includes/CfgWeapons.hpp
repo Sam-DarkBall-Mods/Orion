@@ -3,7 +3,7 @@ class CfgWeapons
 	class MissileLauncher; 
 	class KornetD_Weapon : MissileLauncher 
 	{
-		canlock = LockCadet;
+		canLock = 1;
 		cursoraim = "";
 		scope = 2;
 		weaponLockSystem = 1;

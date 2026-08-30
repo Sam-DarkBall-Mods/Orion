@@ -1,13 +1,16 @@
 #include "uiDefines.hpp"
 
+#define UI_EXPR_INNER(value) #value
+#define UI_EXPR(value) UI_EXPR_INNER(value)
+
 class InfoBox_Base : ctrlControlsGroupNoScrollBars
 {
     idc = -1;
 
-    x = 0;
-    y = 0;
-    w = INFOBOX_W;
-    h = INFOBOX_H;
+    x = UI_EXPR(0);
+    y = UI_EXPR(0);
+    w = UI_EXPR(INFOBOX_W);
+    h = UI_EXPR(INFOBOX_H);
 
     class controls
     {
@@ -17,10 +20,10 @@ class InfoBox_Base : ctrlControlsGroupNoScrollBars
 
             colorBackGround[] = {1, 1, 1, 1};
 
-            x = 0;
-            y = 0;
-            w = INFOBOX_W;
-            h = INFOBOX_H;
+            x = UI_EXPR(0);
+            y = UI_EXPR(0);
+            w = UI_EXPR(INFOBOX_W);
+            h = UI_EXPR(INFOBOX_H);
         };
 
         class TopBackGround : ctrlStaticBackGround
@@ -29,10 +32,10 @@ class InfoBox_Base : ctrlControlsGroupNoScrollBars
 
             colorBackGround[] = {0, 0, 0, 1};
 
-            x = INFOBOX_PADDING_W;
-            y = INFOBOX_PADDING_H;
-            w = INFOBOX_W - 2*INFOBOX_PADDING_W;
-            h = INFOBOX_H - 2*INFOBOX_PADDING_H;
+            x = UI_EXPR(INFOBOX_PADDING_W);
+            y = UI_EXPR(INFOBOX_PADDING_H);
+            w = UI_EXPR(INFOBOX_W - 2*INFOBOX_PADDING_W);
+            h = UI_EXPR(INFOBOX_H - 2*INFOBOX_PADDING_H);
         };
         
         class MainText : ctrlStructuredText
@@ -46,12 +49,12 @@ class InfoBox_Base : ctrlControlsGroupNoScrollBars
                 valign = "middle";
             };
 
-            size = INFOBOX_TEXT_SIZE;
+            size = UI_EXPR(INFOBOX_TEXT_SIZE);
 
-            x = 0;
-            y = INFOBOX_H / 2 - INFOBOX_TEXT_SIZE / 2;
-            w = INFOBOX_W;
-            h = INFOBOX_TEXT_SIZE;
+            x = UI_EXPR(0);
+            y = UI_EXPR(INFOBOX_H / 2 - INFOBOX_TEXT_SIZE / 2);
+            w = UI_EXPR(INFOBOX_W);
+            h = UI_EXPR(INFOBOX_TEXT_SIZE);
         };
     };
 };
@@ -61,8 +64,8 @@ class RscTitles
     class orion_HUD_Gunner
     {
         duration = 1e10;
-		movingEnable = false;
-		enableSimulation = true;
+		movingEnable = 0;
+		enableSimulation = 1;
 		idd = -1;
 
         onLoad = "uiNameSpace setVariable ['DB_orionHUD_display', _this # 0]";
@@ -73,10 +76,10 @@ class RscTitles
             {
                 idc = -1;
 
-                x = 0.5 - GRID_W(20) / 2;
-                y = 0.5 - GRID_H(20) / 2;
-                w = GRID_W(20);
-                h = GRID_H(20);
+                x = UI_EXPR(0.5 - GRID_W(20) / 2);
+                y = UI_EXPR(0.5 - GRID_H(20) / 2);
+                w = UI_EXPR(GRID_W(20));
+                h = UI_EXPR(GRID_H(20));
 
                 class controls
                 {
@@ -88,10 +91,10 @@ class RscTitles
 
                         text = "\orion\pictures\display\line\6.paa";
 
-                        x = 0;
-                        y = 0;
-                        w = GRID_W(20);
-                        h = GRID_H(20);
+                        x = UI_EXPR(0);
+                        y = UI_EXPR(0);
+                        w = UI_EXPR(GRID_W(20));
+                        h = UI_EXPR(GRID_H(20));
                     };
             
                     class UavDirectionLine : ctrlStaticPicture
@@ -102,10 +105,10 @@ class RscTitles
 
                         text = "\orion\pictures\display\trio\12.paa";
 
-                        x = 0;
-                        y = 0;
-                        w = GRID_W(20);
-                        h = GRID_H(20);
+                        x = UI_EXPR(0);
+                        y = UI_EXPR(0);
+                        w = UI_EXPR(GRID_W(20));
+                        h = UI_EXPR(GRID_H(20));
                     };
                 };
             };
@@ -114,10 +117,10 @@ class RscTitles
             {
                 idc = -1;
 
-                x = 0.5 - GRID_W(40.25) / 2;
-                y = safeZoneY;
-                w = GRID_W(40.25);
-                h = GRID_H(4.25);
+                x = UI_EXPR(0.5 - GRID_W(40.25) / 2);
+                y = UI_EXPR(safeZoneY);
+                w = UI_EXPR(GRID_W(40.25));
+                h = UI_EXPR(GRID_H(4.25));
 
                 class controls
                 {
@@ -127,10 +130,10 @@ class RscTitles
 
                         text = "\orion\pictures\display\direction\line.paa";
 
-                        x = 0;
-                        y = GRID_H(0);
-                        w = GRID_W(40.25);
-                        h = GRID_H(4.25);
+                        x = UI_EXPR(0);
+                        y = UI_EXPR(GRID_H(0));
+                        w = UI_EXPR(GRID_W(40.25));
+                        h = UI_EXPR(GRID_H(4.25));
                     };
 
                     class Cursor : ctrlStaticPicture
@@ -141,10 +144,10 @@ class RscTitles
 
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_horDirectionCursor', _this # 0]";
 
-                        x = GRID_W(40.25) / 2 - GRID_W(0.5) / 2;
-                        y = GRID_H(0.55);
-                        w = GRID_W(0.5);
-                        h = GRID_H(0.5);
+                        x = UI_EXPR(GRID_W(40.25) / 2 - GRID_W(0.5) / 2);
+                        y = UI_EXPR(GRID_H(0.55));
+                        w = UI_EXPR(GRID_W(0.5));
+                        h = UI_EXPR(GRID_H(0.5));
                     };
                 };  
             };
@@ -153,10 +156,10 @@ class RscTitles
             {
                 idc = -1;
 
-                x = safeZoneX + safeZoneW - GRID_W(4.25) - GRID_W(1);
-                y = 0.5 - GRID_H(30) / 2;
-                w = GRID_W(4.25);
-                h = GRID_H(30);
+                x = UI_EXPR(safeZoneX + safeZoneW - GRID_W(4.25) - GRID_W(1));
+                y = UI_EXPR(0.5 - GRID_H(30) / 2);
+                w = UI_EXPR(GRID_W(4.25));
+                h = UI_EXPR(GRID_H(30));
 
                 class controls
                 {
@@ -166,10 +169,10 @@ class RscTitles
 
                         text = "\orion\pictures\display\direction\vert.paa";
 
-                        x = 0;
-                        y = GRID_H(0);
-                        w = GRID_W(4.25);
-                        h = GRID_H(30);
+                        x = UI_EXPR(0);
+                        y = UI_EXPR(GRID_H(0));
+                        w = UI_EXPR(GRID_W(4.25));
+                        h = UI_EXPR(GRID_H(30));
                     };
 
                     class Cursor : ctrlStaticPicture
@@ -180,10 +183,10 @@ class RscTitles
 
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_verAngleCursor', _this # 0]";
 
-                        x = GRID_W(0.55);
-                        y = GRID_H(30) / 2 - GRID_H(0.5) / 2;
-                        w = GRID_W(0.5);
-                        h = GRID_H(0.5);
+                        x = UI_EXPR(GRID_W(0.55));
+                        y = UI_EXPR(GRID_H(30) / 2 - GRID_H(0.5) / 2);
+                        w = UI_EXPR(GRID_W(0.5));
+                        h = UI_EXPR(GRID_H(0.5));
                     };
                 };  
             };
@@ -192,15 +195,15 @@ class RscTitles
             {
                 idc = -1;
 
-                x = 0.5 + GRID_W(3.2);
-                y = 0.5 - GRID_H(0.9) - GRID_H(0.1);
-                w = GRID_W(5);
-                h = GRID_H(1.2);
+                x = UI_EXPR(0.5 + GRID_W(3.2));
+                y = UI_EXPR(0.5 - GRID_H(0.9) - GRID_H(0.1));
+                w = UI_EXPR(GRID_W(5));
+                h = UI_EXPR(GRID_H(1.2));
 
                 onLoad = "uiNameSpace setVariable ['DB_orionHUD_scaleFactor', _this # 0]";
 
                 text = "12 м";
-                size = GRID_H(0.9);
+                size = UI_EXPR(GRID_H(0.9));
 
                 class Attributes
                 {
@@ -212,15 +215,15 @@ class RscTitles
             {
                 idc = -1;
 
-                x = 0.5 + GRID_W(3.2);
-                y = 0.5 + GRID_H(0.9) - GRID_H(0.1);
-                w = GRID_W(5);
-                h = GRID_H(2.2);
+                x = UI_EXPR(0.5 + GRID_W(3.2));
+                y = UI_EXPR(0.5 + GRID_H(0.9) - GRID_H(0.1));
+                w = UI_EXPR(GRID_W(5));
+                h = UI_EXPR(GRID_H(2.2));
 
                 onLoad = "uiNameSpace setVariable ['DB_orionHUD_laserText', _this # 0]";
 
                 text = "";
-                size = GRID_H(0.9);
+                size = UI_EXPR(GRID_H(0.9));
 
                 class Attributes
                 {
@@ -232,7 +235,7 @@ class RscTitles
             {
                 idc = -1;
 
-                size = GRID_H(1.2);
+                size = UI_EXPR(GRID_H(1.2));
 
                 onLoad = "uiNameSpace setVariable ['DB_orionHUD_weaponText', _this # 0]";
 
@@ -243,10 +246,10 @@ class RscTitles
                     font = "PuristaLight";
                 };
 
-                x = safeZoneX + GRID_W(1);
-                y = safeZoneY + safeZoneH - GRID_H(1.4) - GRID_H(0.5);
-                w = GRID_W(20); // for safety
-                h = GRID_H(1.4);
+                x = UI_EXPR(safeZoneX + GRID_W(1));
+                y = UI_EXPR(safeZoneY + safeZoneH - GRID_H(1.4) - GRID_H(0.5));
+                w = UI_EXPR(GRID_W(20)); // for safety
+                h = UI_EXPR(GRID_H(1.4));
             };
 
             class LaunchAccessPicture : ctrlStaticPicture
@@ -257,10 +260,10 @@ class RscTitles
 
                 text = "";
 
-                x = safeZoneX + GRID_W(3);
-                y = safeZoneY + safeZoneH - GRID_H(2) - 4*GRID_H(0.5);
-                w = GRID_W(2);
-                h = GRID_H(2);
+                x = UI_EXPR(safeZoneX + GRID_W(3));
+                y = UI_EXPR(safeZoneY + safeZoneH - GRID_H(2) - 4*GRID_H(0.5));
+                w = UI_EXPR(GRID_W(2));
+                h = UI_EXPR(GRID_H(2));
             };
         };
     };
@@ -268,8 +271,8 @@ class RscTitles
     class orion_HUD_Driver
     {
         duration = 1e10;
-		movingEnable = false;
-		enableSimulation = true;
+		movingEnable = 0;
+		enableSimulation = 1;
 		idd = -1;
 
         onLoad = "uiNameSpace setVariable ['DB_orionHUD_display_driver', _this # 0]";
@@ -278,138 +281,138 @@ class RscTitles
         {
             class CoordinateBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) + GRID_W(0.5);
-                y = ANGLE_GROUP_Y - INFOBOX_H;
-                w = GRID_W(12);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) + GRID_W(0.5));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H);
+                w = UI_EXPR(GRID_W(12));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(12) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(12) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_coord_mainText', _this # 0]";
                         text = "3535.85, 4887.42, 500";
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                 };
             };
 
             class BatteryBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(12) + GRID_W(1) + 2*GRID_W(0.5);
-                y = ANGLE_GROUP_Y - INFOBOX_H;
-                w = GRID_W(8);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(12) + GRID_W(1) + 2*GRID_W(0.5));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H);
+                w = UI_EXPR(GRID_W(8));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(8);
+                        w = UI_EXPR(GRID_W(8));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(8) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(8) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         text = "BATTERY: 100";
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_fuel_mainText', _this # 0]";
-                        w = GRID_W(8);
+                        w = UI_EXPR(GRID_W(8));
                     };
                 };
             };
 
             class AltitudeBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + 2*GRID_W(8) + GRID_W(12) + GRID_W(1) + 3*GRID_W(0.5);
-                y = ANGLE_GROUP_Y - INFOBOX_H;
-                w = GRID_W(8);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + 2*GRID_W(8) + GRID_W(12) + GRID_W(1) + 3*GRID_W(0.5));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H);
+                w = UI_EXPR(GRID_W(8));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(8);
+                        w = UI_EXPR(GRID_W(8));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(8) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(8) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         text = "ALT: 19";
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_alt_mainText', _this # 0]";
-                        w = GRID_W(8);
+                        w = UI_EXPR(GRID_W(8));
                     };
                 };
             };
 
             class StatusBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + 3*GRID_W(8) + GRID_W(12) + GRID_W(1) + 4*GRID_W(0.5);
-                y = ANGLE_GROUP_Y - INFOBOX_H;
-                w = GRID_W(12);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + 3*GRID_W(8) + GRID_W(12) + GRID_W(1) + 4*GRID_W(0.5));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H);
+                w = UI_EXPR(GRID_W(12));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(12) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(12) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         text = "STATUS: OPERATIONAL";
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_status_mainText', _this # 0]";
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                 };
             };
 
             class DroneSpeedBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) - GRID_W(12);
-                y = ANGLE_GROUP_Y - INFOBOX_H;
-                w = GRID_W(12);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) - GRID_W(12));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H);
+                w = UI_EXPR(GRID_W(12));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(12) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(12) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_droneSpeed_mainText', _this # 0]";
                         text = "СКОРОСТЬ: 120 КМ/Ч";
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                 };
             };
 
             class PitchBox : InfoBox_Base
             {
-                x = ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) - GRID_W(12);
-                y = ANGLE_GROUP_Y - INFOBOX_H  + INFOBOX_H + GRID_H(0.4);
-                w = GRID_W(12);
+                x = UI_EXPR(ANGLE_GROUP_X + INFOBOX_W + GRID_W(8) + GRID_W(1) - GRID_W(12));
+                y = UI_EXPR(ANGLE_GROUP_Y - INFOBOX_H  + INFOBOX_H + GRID_H(0.4));
+                w = UI_EXPR(GRID_W(12));
 
                 class controls : controls
                 {
                     class WhiteBackGround : WhiteBackGround {
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                     class TopBackGround : TopBackGround {
-                        w = GRID_W(12) - 2*INFOBOX_PADDING_W;
+                        w = UI_EXPR(GRID_W(12) - 2*INFOBOX_PADDING_W);
                     };
                     class MainText : MainText
                     {
                         text = "ТАНГАЖ: 75 г.";
                         onLoad = "uiNameSpace setVariable ['DB_orionHUD_pitch_mainText', _this # 0]";
-                        w = GRID_W(12);
+                        w = UI_EXPR(GRID_W(12));
                     };
                 };
             };

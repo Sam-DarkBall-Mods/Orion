@@ -94,7 +94,7 @@ class CfgAmmo
 		trackOversteer = 0.3;
 		trackLead = 0.85;
 		
-		manualControl = true;
+		manualControl = 1;
 		maxControlRange = 10000;	// max range for manual control, 0 = no control (passive weapon)
 		triggerOnImpact = 1;
 		timetolive = 1000;
