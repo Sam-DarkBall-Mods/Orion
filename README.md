@@ -2,26 +2,26 @@
 
 [![CI](https://github.com/Sam-DarkBall-Mods/Orion/actions/workflows/ci.yml/badge.svg)](https://github.com/Sam-DarkBall-Mods/Orion/actions/workflows/ci.yml)
 
-Orion unmanned aircraft systems for Arma 3.
+Orion adds the Orion-E UAV for BLUFOR, OPFOR and Independent. The available
+loadouts include Kornet missiles and KAB-20 or KAB-50 bombs. Separate driver
+and gunner displays provide the flight and weapon information.
 
 ## Requirements
 
 - Arma 3 2.22 or newer
-- Additional runtime dependencies declared by `CfgPatches`
 
-## Development
+## Building
 
 ```bash
+python3 -B -m unittest discover -s tests -p "test_*.py" -v
 hemtt check
 hemtt build --no-bin
-python3 -B -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-Legacy `CfgPatches`, function names, virtual PBO prefixes, and release PBO
-filenames are compatibility contracts and must not change in a patch release.
+The `orion` prefix, class names and `orion.pbo` filename remain unchanged
+for mission compatibility.
 
 ## License
 
-SQF, Arma configuration, and tooling are GPL-2.0-or-later. Original Arma
-models, textures, materials, animations, and audio are APL-SA. See
-[LICENSES.md](LICENSES.md) and closer notices.
+Code and configs use GPL-2.0-or-later. Original models, textures, materials and
+audio use APL-SA. See [LICENSES.md](LICENSES.md).
